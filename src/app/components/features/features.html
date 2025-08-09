@@ -1,0 +1,73 @@
+<section class="section-padding bg-gradient-to-b from-gray-50 to-white">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="text-center mb-20 observe-animation">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Powerful Features for
+        <span class="bg-gradient-to-r from-measurabl-blue to-measurabl-green bg-clip-text text-transparent">
+          Modern Real Estate
+        </span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+        Our comprehensive platform provides everything you need to manage, analyze,
+        and optimize your real estate sustainability performance.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      <div *ngFor="let feature of features; let i = index"
+           class="card p-8 group observe-animation"
+           [style.animation-delay]="i * 100 + 'ms'">
+
+        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-all duration-300">
+          <span class="text-white text-2xl">{{ feature.icon }}</span>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-measurabl-blue transition-colors">
+          {{ feature.title }}
+        </h3>
+
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          {{ feature.description }}
+        </p>
+
+        <div class="space-y-2">
+          <div *ngFor="let benefit of feature.benefits"
+               class="flex items-center text-sm text-gray-500">
+            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            {{ benefit }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Integration Section -->
+    <div class="observe-animation">
+      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+        <div class="text-center mb-12">
+          <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Seamless Integrations
+          </h3>
+          <p class="text-xl text-gray-600">
+            Connect with your existing tools and systems for a unified workflow
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          <div *ngFor="let integration of integrations"
+               class="text-center group cursor-pointer">
+            <div class="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
+              <span class="text-2xl group-hover:text-white transition-colors">{{ integration.icon }}</span>
+            </div>
+            <div class="text-sm font-medium text-gray-700 group-hover:text-measurabl-blue transition-colors">
+              {{ integration.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

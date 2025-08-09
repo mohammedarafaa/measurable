@@ -1,0 +1,202 @@
+// Main carousel container
+.measurabl-product-carousel {
+  @apply relative;
+
+  .owl-stage-outer {
+    @apply overflow-visible;
+  }
+
+  .owl-stage {
+    @apply flex items-stretch;
+  }
+
+  // Product slide container
+  .product-slide-container {
+    @apply px-2;
+  }
+
+  // Product card styling - exact Measurabl design
+  .product-card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden;
+    min-height: 500px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      @apply shadow-lg border-gray-200;
+      transform: translateY(-2px);
+    }
+  }
+
+  // Product image container
+  .product-image-container {
+    @apply relative overflow-hidden;
+    height: 280px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 0;
+
+    .product-image {
+      @apply w-full h-full object-cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  // Product content styling
+  .product-content {
+    @apply px-6 pb-6;
+  }
+
+  .product-main-title {
+    font-family: 'Verb', ui-sans-serif, system-ui, sans-serif;
+    @apply text-xs font-medium text-gray-800 tracking-[4px] uppercase mt-4 mb-2;
+    letter-spacing: 4px;
+  }
+
+  .product-description {
+    font-family: 'Verb', ui-sans-serif, system-ui, sans-serif;
+    @apply text-xs font-light text-gray-700 leading-relaxed mb-4;
+  }
+
+  .product-subtitle-section {
+    @apply mt-4;
+  }
+
+  .product-subtitle {
+    font-family: 'Verb', ui-sans-serif, system-ui, sans-serif;
+    @apply text-xs font-medium text-gray-800 tracking-[4px] uppercase mb-2;
+    letter-spacing: 4px;
+  }
+
+  .product-sub-description {
+    font-family: 'Verb', ui-sans-serif, system-ui, sans-serif;
+    @apply text-xs font-light text-gray-700 leading-relaxed;
+  }
+
+  // Navigation styling - exact Measurabl style
+  .owl-nav {
+    @apply absolute top-1/2 transform -translate-y-1/2 w-full;
+    pointer-events: none;
+
+    button {
+      @apply absolute bg-white rounded-full shadow-md border border-gray-200;
+      @apply w-12 h-12 flex items-center justify-center;
+      @apply text-gray-600 hover:text-gray-900 hover:bg-gray-50;
+      @apply transition-all duration-200;
+      pointer-events: all;
+      font-size: 18px;
+      outline: none;
+
+      &.owl-prev {
+        @apply -left-6;
+      }
+
+      &.owl-next {
+        @apply -right-6;
+      }
+
+      &:hover {
+        @apply shadow-lg border-gray-300;
+        transform: scale(1.05);
+      }
+
+      i {
+        @apply text-lg;
+      }
+    }
+  }
+
+  // Dots styling - exact Measurabl pagination
+  .owl-dots {
+    @apply flex justify-center mt-8 space-x-2;
+
+    .owl-dot {
+      @apply inline-block;
+
+      span {
+        @apply w-2 h-2 bg-gray-300 rounded-full block;
+        @apply transition-all duration-200 cursor-pointer;
+
+        &:hover {
+          @apply bg-gray-400;
+        }
+      }
+
+      &.active span {
+        @apply bg-gray-800 w-8;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@screen sm {
+  .measurabl-product-carousel {
+    .product-card {
+      min-height: 520px;
+    }
+
+    .product-image-container {
+      height: 300px;
+    }
+  }
+}
+
+@screen lg {
+  .measurabl-product-carousel {
+    .product-card {
+      min-height: 560px;
+    }
+
+    .product-image-container {
+      height: 320px;
+    }
+
+    .owl-nav button {
+      &.owl-prev {
+        @apply -left-12;
+      }
+
+      &.owl-next {
+        @apply -right-12;
+      }
+    }
+  }
+}
+
+@screen xl {
+  .measurabl-product-carousel {
+    .product-card {
+      min-height: 600px;
+    }
+
+    .product-image-container {
+      height: 350px;
+    }
+  }
+}
+
+// Mobile optimization
+@screen max-sm {
+  .measurabl-product-carousel {
+    .product-card {
+      min-height: 450px;
+      margin: 0 10px;
+    }
+
+    .product-image-container {
+      height: 240px;
+      margin: 10px;
+    }
+
+    .product-content {
+      @apply px-4 pb-4;
+    }
+
+    .owl-nav {
+      @apply hidden;
+    }
+  }
+}

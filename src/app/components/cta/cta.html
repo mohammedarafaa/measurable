@@ -1,0 +1,96 @@
+<section class="section-padding bg-gradient-to-r from-blue-900 via-blue-800 to-green-800 text-white relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-green-400/20 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+  </div>
+
+  <div class="container-custom relative z-10">
+    <div class="text-center max-w-4xl mx-auto">
+      <!-- Main CTA -->
+      <div class="observe-animation">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+          Ready to Transform Your
+          <span class="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+            Sustainability Journey?
+          </span>
+        </h2>
+
+        <p class="text-xl md:text-2xl mb-12 text-blue-100 leading-relaxed">
+          Join thousands of real estate professionals who trust Measurabl to manage their sustainability data.
+          Start your free trial today and see the difference data-driven sustainability can make.
+        </p>
+      </div>
+
+      <!-- CTA Cards -->
+      <div class="grid md:grid-cols-2 gap-8 mb-12 observe-animation" style="animation-delay: 0.2s;">
+        <!-- Free Trial Card -->
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20">
+          <div class="text-6xl mb-4">🚀</div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">Start Free Trial</h3>
+          <p class="text-blue-100 mb-6 leading-relaxed">
+            Get full access to our platform for 30 days. No credit card required,
+            no commitments. Experience the power of Measurabl risk-free.
+          </p>
+          <button class="btn-secondary w-full text-lg py-4 font-bold">
+            Start Your Free Trial
+          </button>
+          <div class="text-sm text-blue-200 mt-4">
+            ✓ Full platform access ✓ Expert onboarding ✓ 24/7 support
+          </div>
+        </div>
+
+        <!-- Demo Card -->
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20">
+          <div class="text-6xl mb-4">👥</div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">Book a Demo</h3>
+          <p class="text-blue-100 mb-6 leading-relaxed">
+            See Measurabl in action with a personalized demo tailored to your portfolio.
+            Learn how we can solve your specific sustainability challenges.
+          </p>
+          <button class="border-2 border-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-all duration-300 w-full">
+            Schedule Demo
+          </button>
+          <div class="text-sm text-blue-200 mt-4">
+            ✓ 1-on-1 consultation ✓ Custom use cases ✓ Implementation planning
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="observe-animation" style="animation-delay: 0.4s;">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div *ngFor="let indicator of trustIndicators">
+            <div class="text-2xl md:text-3xl font-bold text-green-400 mb-2">{{ indicator.value }}</div>
+            <div class="text-blue-200 text-sm">{{ indicator.label }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="mt-16 pt-8 border-t border-white/20 observe-animation" style="animation-delay: 0.6s;">
+        <p class="text-blue-200 mb-4">
+          Questions? Our sustainability experts are here to help.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <a href="mailto:hello@measurabl.com"
+             class="flex items-center text-white hover:text-green-400 transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+            hellomeasurabl.com
+          </a>
+
+          <a href="tel:+1-555-0123"
+             class="flex items-center text-white hover:text-green-400 transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            +1 (555) 012-3456
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,423 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;500;700&display=swap');
+
+html,
+body {
+  font-family: 'Roboto Serif', serif;
+  background-color: #000;
+  height: 100vh;
+}
+/* Custom color palette */
+@theme {
+  --color-measurabl-blue: #1e40af;
+  --color-measurabl-green: #059669;
+  --color-measurabl-dark-blue: #1e3a8a;
+  --color-measurabl-light-green: #10b981;
+  --color-measurabl-gray: #6b7280;
+
+  /* Font family */
+  --font-family-sans: Inter, system-ui, sans-serif;
+
+  /* Custom animations */
+  --animate-fade-in: fadeIn 0.6s ease-in-out;
+  --animate-slide-up: slideUp 0.8s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s infinite;
+}
+
+/* Keyframe definitions */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-measurabl-blue hover:bg-measurabl-dark-blue text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-measurabl-green hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  overflow: hidden;
+  position: relative;
+
+  // Smooth scroll behavior
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  >* {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-property: opacity, transform;
+    will-change: opacity, transform;
+  }
+
+  // Active animation state
+  &.animate {
+    >* {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    // Shopify-style staggered animations
+    >*:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+
+    >*:nth-child(2) {
+      transition-delay: 0.25s;
+    }
+
+    >*:nth-child(3) {
+      transition-delay: 0.4s;
+    }
+
+    >*:nth-child(4) {
+      transition-delay: 0.55s;
+    }
+
+    >*:nth-child(5) {
+      transition-delay: 0.7s;
+    }
+  }
+}
+
+// Shopify-style product carousel animations
+.measurabl-product-carousel {
+  .product-card {
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // Animate cards when parent section is visible
+  .section.animate & {
+    .product-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Enhanced carousel styling for Shopify feel
+::ng-deep {
+  .owl-carousel {
+    .owl-stage-outer {
+      overflow: visible;
+      padding: 20px 0;
+    }
+
+    .owl-item {
+      transition: transform 0.3s ease;
+
+      &.active {
+        transform: scale(1);
+      }
+
+      &:not(.active) {
+        transform: scale(0.9);
+        opacity: 0.7;
+      }
+    }
+
+    // Shopify-style navigation
+    .owl-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+
+      .owl-prev,
+      .owl-next {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #333;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+          background: rgba(255, 255, 255, 1);
+          transform: scale(1.1);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      .owl-prev {
+        left: -25px;
+      }
+
+      .owl-next {
+        right: -25px;
+      }
+    }
+
+    // Shopify-style dots
+    .owl-dots {
+      text-align: center;
+      margin-top: 30px;
+
+      .owl-dot {
+        display: inline-block;
+        margin: 0 8px;
+
+        span {
+          width: 12px;
+          height: 12px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          display: block;
+          transition: all 0.3s ease;
+        }
+
+        &.active span {
+          background: #3ef6e3;
+          transform: scale(1.2);
+        }
+
+        &:hover span {
+          background: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+}
+
+// Parallax-style background animation
+.section {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(62, 246, 227, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
+    transform: translateY(100%);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: -1;
+  }
+
+  &.animate::before {
+    transform: translateY(0);
+  }
+}
+
+// Smooth text reveal animation (Shopify-style)
+.product-main-title,
+.product-subtitle,
+.product-description {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section.animate {
+  .product-main-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+
+  .product-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.35s;
+  }
+
+  .product-description {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+}
+
+// Button hover effects (Shopify-style)
+button {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .section>* {
+    transform: translateY(30px) scale(0.98);
+  }
+
+  ::ng-deep .owl-carousel {
+    .owl-nav {
+
+      .owl-prev,
+      .owl-next {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      .owl-prev {
+        left: -20px;
+      }
+
+      .owl-next {
+        right: -20px;
+      }
+    }
+  }
+}
+
+// Reduced motion accessibility
+@media (prefers-reduced-motion: reduce) {
+
+  .section>*,
+  .product-card,
+  .product-main-title,
+  .product-subtitle,
+  .product-description {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  ::ng-deep .owl-carousel .owl-item {
+    transition: none !important;
+  }
+}
+
+// /* etc., add more nth-child for more elements */
+
+p,
+span {
+  color: #d1d5db;
+  /* Tailwind gray-300 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #EFCC3A
+  /* White headings */
+}

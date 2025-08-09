@@ -1,0 +1,340 @@
+<app-nav-bar></app-nav-bar>
+<app-hero #animatedSection [class.animate]="visibleSections[0]" class="section" ></app-hero>
+<!-- Hero Section -->
+<section  #animatedSection [class.animate]="visibleSections[1]" class=" section bg-[#000] py-12 sm:py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+      <!-- Left Section -->
+      <div class="text-white">
+        <h2 class=" font-bold leading-tight mb-4">Measurabl Products</h2>
+        <p class="text-base  mb-6 text-gray-300">
+          The world's most authoritative repository of aggregated real estate data
+        </p>
+        <p class="text-base  mb-6 text-gray-300">
+          The Measurabl product suite leverages Quantum Cloud data to improve disclosure and stakeholder reporting. From portfolio analysis to insights into any building anywhere in the world, you get more accurate data for where you are in your sustainability journey.    </p>
+        <button
+          class="inline-flex items-center gap-2 sm:gap-3 bg-[#3ef6e3] text-[#000] px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-[#2db3a3] transition-colors text-sm sm:text-base"
+        >
+          EXPLORE
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Right Section: Carousel -->
+      <div class="measurabl-product-carousel">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let product of products()">
+            <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col items-center text-center p-4  max-w-sm mx-auto">
+              <div class="product-image-container w-full  overflow-hidden mb-4">
+                <img [src]="product.image" alt="Product" class="object-contain w-full " />
+              </div>
+
+            </div>
+            <h3 class="product-main-title text-lg sm:text-base font-semibold text-white">{{ product.mainTitle }}</h3>
+            <p class="product-subtitle text-sm text-[#3ef6e3] mb-2">{{ product.subtitle }}</p>
+            <p class="product-description text-sm text-white mb-1">{{ product.description }}</p>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<app-quantum-cloud [class.animate]="visibleSections[2]" #animatedSection class="section" ></app-quantum-cloud>
+<app-footer [class.animate]="visibleSections[3]" #animatedSection class="section" ></app-footer>
+<section  [class.animate]="visibleSections[4]" #animatedSection class="section" class="bg-[#000] min-h-screen text-white font-sans">
+
+  <app-leading-companies  [class.animate]="visibleSections[5]" #animatedSection class="section"></app-leading-companies>
+<app-global-impact  [class.animate]="visibleSections[6]" #animatedSection class="section"></app-global-impact>
+
+  <app-award  [class.animate]="visibleSections[7]" #animatedSection class="section"></app-award>
+</section>
+<app-customer-impact  [class.animate]="visibleSections[8]" #animatedSection class="section"></app-customer-impact>
+<div  [class.animate]="visibleSections[9]" #animatedSection class="section" class="max-w-7xl mx-auto border border-t-0 border-[#d9d1c1] m-4 p-4 ">
+
+  <!-- Measurabl News Header -->
+  <div class="border-b border-[#d9d1c1] flex justify-between items-center py-2 px-1">
+    <h2 class="text-lg font-serif text-gray-800">Measurabl News</h2>
+    <button class="bg-[#17213a] text-xs text-white px-4 py-2 rounded-sm tracking-wide uppercase hover:bg-[#223167] focus:outline-none transition-all">
+      See All Articles &#8594;
+    </button>
+  </div>
+
+  <!-- News Main Area: 3-Column Grid (responsive) -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 border-b border-[#d9d1c1]">
+    <!-- News Text + Image (Left, spans 2/3) -->
+    <div class="lg:col-span-2 p-6">
+      <p class="text-[11px] text-gray-600 mb-1">July 31, 2025</p>
+      <div class="font-serif font-medium text-[15px] text-[#252525] mb-4">
+        Why Measurabl Launched a Free Sustainability Solution
+      </div>
+      <div class="w-full flex justify-center mb-2">
+        <img src="./Measurabl/Mat.webp" class="rounded-sm shadow border border-gray-200 max-w-[360px] w-full" alt="news feature" />
+      </div>
+      <p class="text-[10px] text-gray-400 mt-2">
+        Paywalls must lift, the ecosystem must integrate, and focus must shift to outcomes. When I started Measurabl 10 years ago, envisioning 1 billion square...
+      </p>
+    </div>
+    <!-- Logos and Mini-list (Right) -->
+    <div class="flex flex-col items-start justify-start px-6 py-8 gap-10">
+      <!-- IPE Real Assets -->
+      <div>
+        <img src="./Measurabl/imgi_149_Media-Outlets-02-768x540.png" alt="IPE Real Assets" class="mb-2 w-[260px]"/>
+        <p class="text-[11px] text-gray-600 mb-1">JULY 31, 2025</p>
+        <div class="text-[10px] text-gray-500">
+          Real Estate Titans to Measurabl<br/>Amid ENERGY STAR<br/>Uncertainty
+        </div>
+      </div>
+      <!-- Financial Post -->
+      <div>
+        <img src="./Measurabl/imgi_150_Media-Outlets-03-300x211.png" alt="Financial Post" class="mb-2 w-[260px]"/>
+        <p class="text-[11px] text-gray-600 mb-1">JULY 6, 2025</p>
+        <div class="text-[10px] text-gray-500">
+          Measurabl Launches Free Tier
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How Sustainability Trends Affect The Real Estate Industry -->
+  <div  [class.animate]="visibleSections[10]" #animatedSection class="section" class="border-b border-[#d9d1c1] px-1 pt-8 pb-3">
+    <div class="flex justify-between items-center">
+      <div>
+        <p class="text-[9px] font-light uppercase text-gray-500 mb-1 tracking-wide">Personal Resources</p>
+        <h3 class="font-serif text-base md:text-lg font-normal text-[#232323] mb-2">
+          How Sustainability Trends Affect The Real Estate Industry
+        </h3>
+      </div>
+      <button class="bg-[#17213a] text-xs text-white px-4 py-2 rounded-sm tracking-wide uppercase hover:bg-[#223167] focus:outline-none transition-all">
+        See All Articles &#8594;
+      </button>
+    </div>
+  </div>
+
+  <!-- Resource Images Grid -->
+  <div   [class.animate]="visibleSections[11]" #animatedSection class="section"class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-4">
+    <div>
+      <img src="./Measurabl/fste.webp" alt="Blueprint Vegas 2024" class="aspect-video object-cover rounded-sm border border-[#d9d1c1]"/>
+      <p class="text-[10px] text-gray-600 mt-1">
+        FTSE Russell’s Sustainability Data Powers Better Capital Markets Decisions
+      </p>
+    </div>
+    <div>
+      <img src="./Measurabl/unisco.webp" alt="Union Properties" class="aspect-video object-cover rounded-sm border border-[#d9d1c1]"/>
+      <p class="text-[10px] text-gray-600 mt-1">
+        Union Properties Achieves Sustained Energy Efficiency and Cost Savings With Measurabl Optimize
+      </p>
+    </div>
+    <div>
+      <img src="./Measurabl/ppgm.webp" alt="PGGM Office" class="aspect-video object-cover rounded-sm border border-[#d9d1c1]"/>
+      <p class="text-[10px] text-gray-600 mt-1">
+        How PGGM Uses ESGx Securities to Drive Smarter Real Estate Investments
+      </p>
+    </div>
+    <div>
+      <img src="./Measurabl/ave.webp" alt="Landgate Joe" class="aspect-video object-cover rounded-sm border border-[#d9d1c1]"/>
+      <p class="text-[10px] text-gray-600 mt-1">
+        Landgate Joe Showcases ESG Data with Measurabl
+      </p>
+    </div>
+  </div>
+</div>
+
+<section  [class.animate]="visibleSections[12]" #animatedSection class="section" class="relative gradient-bg min-h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Animated Background Dots -->
+    <div class="absolute inset-0">
+        <!-- Top scattered dots -->
+        <div class="floating-dot absolute top-[15%] left-[8%] w-2 h-2 bg-teal-400 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute top-[20%] left-[85%] w-1.5 h-1.5 bg-teal-300 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute top-[12%] left-[65%] w-2.5 h-2.5 bg-teal-400 rounded-full pulse-dot"></div>
+
+        <!-- Middle scattered dots -->
+        <div class="floating-dot absolute top-[45%] left-[5%] w-1.5 h-1.5 bg-teal-300 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute top-[40%] left-[92%] w-2 h-2 bg-teal-400 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute top-[35%] left-[15%] w-1 h-1 bg-teal-200 rounded-full pulse-dot"></div>
+
+        <!-- Bottom scattered dots -->
+        <div class="floating-dot absolute bottom-[25%] left-[12%] w-2 h-2 bg-teal-400 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute bottom-[20%] left-[88%] w-1.5 h-1.5 bg-teal-300 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute bottom-[15%] left-[25%] w-1 h-1 bg-teal-200 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute bottom-[30%] left-[75%] w-2.5 h-2.5 bg-teal-400 rounded-full pulse-dot"></div>
+
+        <!-- Additional scattered dots for fullness -->
+        <div class="floating-dot absolute top-[60%] left-[20%] w-1 h-1 bg-teal-200 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute top-[70%] left-[80%] w-1.5 h-1.5 bg-teal-300 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute top-[25%] left-[40%] w-1 h-1 bg-teal-200 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute top-[55%] left-[60%] w-1.5 h-1.5 bg-teal-300 rounded-full pulse-dot"></div>
+        <div class="floating-dot absolute bottom-[40%] left-[45%] w-1 h-1 bg-teal-200 rounded-full pulse-dot"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+
+        <!-- Small Header Text -->
+        <p class="text-gray-300 text-sm sm:text-base uppercase tracking-widest mb-8 font-light">
+            Experience Measurabl
+        </p>
+
+        <!-- Main Heading -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white mb-12 leading-tight">
+            Gain the Measurabl
+            <span class="block">Advantage</span>
+        </h1>
+
+        <!-- CTA Button -->
+        <div class="flex justify-center">
+            <button class="bg-teal-500 hover:bg-teal-400 text-white font-semibold py-4 px-8 sm:px-12 rounded-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50 uppercase tracking-wider text-sm sm:text-base">
+                Request a Demo
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Subtle overlay for depth -->
+    <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+
+</section>
+<footer  [class.animate]="visibleSections[13]" #animatedSection class="section" class="bg-[#000]  text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Main Footer Content -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+
+          <!-- HOW IT WORKS Column -->
+          <div class="lg:col-span-1">
+              <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                  HOW IT WORKS
+              </h3>
+              <ul class="space-y-3">
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Features</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Real estate owners</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Tenants</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Capital markets</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Request a demo</a></li>
+              </ul>
+          </div>
+
+          <!-- SUCCESS STORIES Column -->
+          <div class="lg:col-span-1">
+              <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                  SUCCESS STORIES
+              </h3>
+              <ul class="space-y-3">
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Outcomes</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Our customers</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Case studies</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Webinars</a></li>
+              </ul>
+          </div>
+
+          <!-- COMPANY Column -->
+          <div class="lg:col-span-1">
+              <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                  COMPANY
+              </h3>
+              <ul class="space-y-3">
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">About us</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">News</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Careers</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Partners</a></li>
+              </ul>
+          </div>
+
+          <!-- SUPPORT Column -->
+          <div class="lg:col-span-1">
+              <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                  SUPPORT
+              </h3>
+              <ul class="space-y-3">
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Contact support</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Help center</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Contact us</a></li>
+              </ul>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div class="lg:col-span-1">
+              <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                  Get monthly updates on upcoming webinars, events and product news.
+              </p>
+              <form class="space-y-4">
+                  <div class="flex">
+                      <input
+                          type="email"
+                          placeholder="Email"
+                          class="flex-1 px-3 py-2 bg-white/10 border border-gray-600 rounded-l-md text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                      <button
+                          type="submit"
+                          class="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded-r-md transition-colors">
+                          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                          </svg>
+                      </button>
+                  </div>
+              </form>
+
+              <!-- Social Media Icons -->
+              <div class="flex space-x-4 mt-6">
+                  <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                      </svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-600 mt-12 pt-8">
+          <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0">
+
+              <!-- Logo and Copyright -->
+              <div class="flex items-center space-x-4">
+                  <div class="flex items-center space-x-2">
+                      <div class="w-6 h-6 bg-green-500 rounded flex items-center justify-center">
+                          <span class="text-white font-bold text-sm">m</span>
+                      </div>
+                      <span class="text-white font-medium">measurabl</span>
+                  </div>
+              </div>
+
+              <div class="text-gray-400 text-sm">
+                  Copyright ©2024 Measurabl, Inc.
+              </div>
+
+              <!-- Legal Links -->
+              <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+                  <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                  <a href="#" class="text-gray-400 hover:text-white transition-colors">Security Statement</a>
+                  <a href="#" class="text-gray-400 hover:text-white transition-colors">EU Standard Contractual Clauses</a>
+                  <a href="#" class="text-gray-400 hover:text-white transition-colors">UK Standard Contractual Clauses</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>

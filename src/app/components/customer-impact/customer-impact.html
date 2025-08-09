@@ -1,0 +1,80 @@
+<!-- Section -->
+<section
+  class="relative bg-[#000] py-12 px-4 md:px-16 rounded-xl overflow-hidden"
+>
+  <div
+    class="relative rounded-xl p-4 overflow-hidden cursor-pointer"
+    (click)="openModal()"
+  >
+    <!-- Background overlay -->
+    <img
+      src="./Measurabl/mask.png"
+      alt="Overlay"
+      class="absolute inset-0 w-full h-full object-cover  z-0"
+    />
+
+    <!-- Foreground content -->
+    <div
+      class="relative z-10 flex flex-col items-center justify-center text-center text-white p-8 md:p-12 rounded-md mx-auto my-12 shadow-xl border border-[#00D1B2] max-w-3xl w-full"
+    >
+      <!-- Corner lines -->
+      <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#00D1B2]"></div>
+      <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#00D1B2]"></div>
+      <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#00D1B2]"></div>
+      <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#00D1B2]"></div>
+
+      <p class="text-sm uppercase tracking-widest text-gray-300 px-4 mb-2">
+        Customer Success
+      </p>
+
+      <h2
+        class="text-2xl md:text-4xl font-serif font-semibold mb-4 max-w-full break-words"
+      >
+        Real Results, Measurabl Impact
+      </h2>
+
+      <p class="text-sm md:text-base text-gray-300 mb-6 max-w-lg mx-auto px-4">
+        Jamestown and BXP are on the vanguard of real estate sustainability.
+        Hear what Becca Timms and Ben Myers have to say.
+      </p>
+
+      <button
+        class="flex items-center bg-[#00D1B2] hover:bg-[#00c4a7] text-black font-bold px-4 py-2 rounded-sm transition-colors duration-300"
+      >
+        <svg
+          class="w-4 h-4 fill-current mr-2"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M8 5v14l11-7z" />
+        </svg>
+        Watch Video
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div
+  *ngIf="isOpen"
+  class="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
+>
+  <div class="relative w-full max-w-4xl aspect-video rounded-lg overflow-hidden shadow-lg">
+    <iframe
+      class="w-full h-full"
+      [src]="getVideoUrl() | safeUrl"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      title="Video Modal"
+    ></iframe>
+    <button
+      (click)="closeModal()"
+      class="absolute top-2 right-2 text-white text-4xl font-bold leading-none hover:text-gray-400 transition"
+      aria-label="Close modal"
+    >
+      &times;
+    </button>
+  </div>
+</div>
